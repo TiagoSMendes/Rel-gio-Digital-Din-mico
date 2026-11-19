@@ -1,33 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Shade&family=Nabla&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Bungee+Shade&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family:'Bungee Shade', 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Bungee Shade', 'Open Sans', sans-serif;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(120deg, #ccc, #007399);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    transition: background 1s ease;
+}
+
+/* Cores que mudam conforme a hora do dia */
+body[data-periodo="manha"] { background: linear-gradient(120deg, #ffe29f, #ffa99f 50%, #00a8cc); }
+body[data-periodo="tarde"] { background: linear-gradient(120deg, #ccc, #007399); }
+body[data-periodo="noite"] { background: linear-gradient(120deg, #0f2027, #203a43 50%, #2c5364); }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 550px;
+}
+
+.saudacao,
+.data {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+}
+
+.saudacao {
+    font-size: clamp(20px, 5vw, 28px);
+}
+
+.data {
+    font-size: clamp(14px, 3.5vw, 18px);
 }
 
 .relogio {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 200px;
-    width: 550px;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 10px;
     background: transparent;
     border-radius: 3px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, .75);
 }
 
 .relogio div {
-    height: 170px;
-    width: 150px;
+    position: relative;
+    flex: 1;
+    max-width: 150px;
+    aspect-ratio: 15 / 17;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,11 +78,13 @@ body {
 
 .relogio span {
     font-weight: bolder;
-    font-size: 60px;
+    font-size: clamp(32px, 11vw, 60px);
+    font-variant-numeric: tabular-nums;
 }
 
 .relogio span.tempo {
-    font-size: 10px;
-    margin-top: 11em;
     position: absolute;
+    bottom: 12px;
+    font-size: clamp(8px, 2vw, 10px);
+    letter-spacing: 1px;
 }
