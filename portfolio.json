@@ -1,0 +1,19 @@
+{
+  "_sobre": "Lido automaticamente pelo portfólio de Tiago Mendes. Edite para mudar como o projeto aparece lá.",
+  "titulo": {
+    "pt": "Relógio Digital Dinâmico",
+    "en": "Dynamic digital clock"
+  },
+  "descricao": {
+    "pt": "Relógio com data por extenso e cores que mudam conforme a manhã, a tarde e a noite.",
+    "en": "Clock with full date and colors that change with morning, afternoon and night."
+  },
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "site": "",
+  "imagem": "portfolio.webp",
+  "ordem": 7
+}
